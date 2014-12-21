@@ -1,0 +1,38 @@
+﻿@using WebApiAttributes.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "ログイン";
+}
+<h2>@ViewBag.Title.</h2>
+<div>
+    <div>
+        <section>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <h4>適当な アカウントを使用してログインします。</h4>
+                <hr />
+                @Html.ValidationSummary(true, "")
+                <div>
+                    @Html.LabelFor(m => m.UserName)
+                    <div>
+                        @Html.TextBoxFor(m => m.UserName)
+                        @Html.ValidationMessageFor(m => m.UserName, "")
+                    </div>
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.Password)
+                    <div>
+                        @Html.PasswordFor(m => m.Password)
+                        @Html.ValidationMessageFor(m => m.Password, "")
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="submit" value="ログイン" />
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>

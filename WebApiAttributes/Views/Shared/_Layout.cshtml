@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+        <div>
+            <div>
+                WebApi属性
+            </div>
+            <div>
+                <ul>
+                    <li>@Html.ActionLink("ホーム", "Index", "Home", new { area = "" }, null)</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - WebApi属性</p>
+        </footer>
+    </div>
+</body>
+</html>
